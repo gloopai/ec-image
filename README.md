@@ -31,6 +31,47 @@ It is designed for Taobao, Tmall, JD, Amazon-style product listing work, especia
 根据这张产品图，生成 5 套电商详情页长图
 ```
 
+## Using in Codex
+
+1. Install or enable this plugin in Codex.
+2. Start a Codex thread and attach or reference a product image.
+3. Ask Codex to generate ecommerce detail-page images. The skill is triggered by prompts such as:
+
+```text
+根据这张产品图，生成 5 套电商详情页长图
+```
+
+```text
+用 demo 模式，根据这个产品图做淘宝详情页长图，输出 3 套不同风格
+```
+
+```text
+保持产品外观严格一致，生成天猫风格详情页，并给出每张图的文案和 storyboard
+```
+
+Codex will inspect the product image, infer a product brief when details are missing, plan differentiated long-page concepts, generate prompt packs, run visual QA, and return image paths plus copywriting notes.
+
+For best results, provide:
+
+- a clear product reference image
+- product name or category, if known
+- target platform, such as Taobao, Tmall, JD, Amazon, Douyin, or Xiaohongshu
+- desired output count, usually 3-5
+- mode: `strict` for product fidelity, or `demo` for polished demo material
+- any claims, specs, or forbidden wording that should be included or avoided
+
+By convention, generated images should be saved under:
+
+```text
+public/demo-results/detail/
+```
+
+If a demo input reference is also prepared, it should be saved under:
+
+```text
+public/demo-inputs/
+```
+
 ## Modes
 
 - `strict`: preserve the uploaded product as closely as possible. Best with image-reference or image-to-image capable models.
