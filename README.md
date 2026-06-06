@@ -2,6 +2,19 @@
 
 Codex plugin for turning one product reference image into multiple ecommerce detail-page long images.
 
+## Open Source Overview
+
+Ecommerce Detail Page Generator is an open-source Codex plugin template for building repeatable ecommerce image-generation workflows. It packages prompt strategy, product-brief extraction, visual planning, and QA guidance into a reusable skill that can be adapted for different storefronts, product categories, and image providers.
+
+The project is useful for:
+
+- developers building Codex plugins or AI-assisted ecommerce tools
+- founders preparing realistic product demos from limited product imagery
+- designers exploring multiple listing-page directions from one reference image
+- marketplace operators who need structured creative briefs before production
+
+The repository intentionally keeps the workflow provider-neutral. You can use the skill with any image model or generation pipeline that Codex can access, while keeping the same planning, output, and review structure.
+
 ## What It Does
 
 This plugin provides a reusable Codex skill for ecommerce image generation workflows:
@@ -72,6 +85,26 @@ If a demo input reference is also prepared, it should be saved under:
 public/demo-inputs/
 ```
 
+## How It Works
+
+The plugin contributes one Codex skill:
+
+```text
+skills/ecommerce-detail-pages/SKILL.md
+```
+
+When the skill is triggered, Codex follows a structured workflow:
+
+- inspect the provided product reference
+- infer or collect product metadata
+- plan 3-5 differentiated long-page concepts
+- prepare visual, copy, negative, and reference prompts
+- generate or hand off image creation through the available model provider
+- review outputs for product fidelity and ecommerce usability
+- package the final image paths, copy, storyboard notes, and caveats
+
+The JSON files under `assets/` and `scripts/` provide reusable defaults for style directions and product-brief structure. They are intended to be extended rather than treated as fixed runtime dependencies.
+
 ## Modes
 
 - `strict`: preserve the uploaded product as closely as possible. Best with image-reference or image-to-image capable models.
@@ -86,3 +119,27 @@ Generated detail pages should:
 - produce differentiated layouts rather than repeated variants
 - avoid unrelated products, distorted people, broken Chinese text, and SVG placeholders
 - return usable image paths plus product copy and storyboard notes
+
+## Roadmap Ideas
+
+- add more platform presets for JD, Amazon, Xiaohongshu, and Douyin
+- add category-specific prompt packs for beauty, electronics, apparel, food, and home goods
+- add scripts for validating output dimensions and naming conventions
+- add examples with before/after product references and generated detail pages
+- add provider-specific recipes for image-reference and image-to-image generation
+
+## Contributing
+
+Contributions are welcome. Useful changes include:
+
+- improving the skill workflow or QA checklist
+- adding style presets and category-specific examples
+- tightening prompt language for better product fidelity
+- adding scripts that make generated outputs easier to validate or package
+- improving bilingual documentation
+
+Please keep changes focused and include examples when they affect user-facing workflow behavior.
+
+## License
+
+Add a license file before publishing this repository publicly. If you want broad reuse, consider MIT or Apache-2.0. If you need stronger patent language, Apache-2.0 is usually the better default.
