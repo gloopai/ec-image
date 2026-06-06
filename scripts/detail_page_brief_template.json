@@ -1,0 +1,32 @@
+{
+  "product_name": "",
+  "category": "",
+  "platform": "天猫/淘宝",
+  "mode": "strict",
+  "output_count": 5,
+  "target_dimensions": {
+    "width": 900,
+    "height_min": 1800,
+    "height_max": 3200
+  },
+  "required_sections": [
+    "Hero 主视觉",
+    "核心卖点 1",
+    "核心卖点 2",
+    "场景/使用方式",
+    "服务/规格/信任背书"
+  ],
+  "visual_constraints": [
+    "保持产品外形、颜色和关键结构",
+    "5 张图必须构图不同",
+    "避免无关产品和无关人物",
+    "避免乱码中文和过密小字",
+    "避免 SVG 占位图"
+  ],
+  "deliverables": [
+    "5 张详情页长图",
+    "产品名称和商品资料填写文案",
+    "每张图的 5 区域 storyboard",
+    "视觉质检说明"
+  ]
+}

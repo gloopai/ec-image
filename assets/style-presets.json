@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "presets": [
+    {
+      "id": "clean-blue-technical",
+      "name": "Clean Blue Technical",
+      "palette": ["white", "ice blue", "deep navy"],
+      "best_for": ["appliances", "electronics", "home tools"],
+      "layout": "stacked long page with airy panels, technical icons, close-up feature bands"
+    },
+    {
+      "id": "warm-home-lifestyle",
+      "name": "Warm Home Lifestyle",
+      "palette": ["cream", "warm wood", "soft brown"],
+      "best_for": ["home goods", "beauty", "garment care"],
+      "layout": "warm hero scene, lifestyle usage bands, soft cards, service footer"
+    },
+    {
+      "id": "dark-premium-travel",
+      "name": "Dark Premium Travel",
+      "palette": ["midnight blue", "white", "cool gray"],
+      "best_for": ["portable products", "business travel", "premium devices"],
+      "layout": "dark cinematic hero, high-contrast feature cards, macro detail bands"
+    },
+    {
+      "id": "multi-column-marketplace",
+      "name": "Multi Column Marketplace",
+      "palette": ["white", "light gray", "accent blue"],
+      "best_for": ["demo comparisons", "variant exploration", "listing portfolios"],
+      "layout": "five narrow vertical detail-page variants shown as a comparison set"
+    },
+    {
+      "id": "soft-editorial",
+      "name": "Soft Editorial",
+      "palette": ["white", "mist gray", "muted accent"],
+      "best_for": ["small appliances", "lifestyle products", "premium home"],
+      "layout": "magazine-like long page with large photography, spacious type, subtle feature tiles"
+    }
+  ]
+}
