@@ -2,5 +2,8 @@
 *.log
 node_modules/
 dist/
+tmp/
+output/
+__pycache__/
 .env
 .env.*

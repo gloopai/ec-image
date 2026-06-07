@@ -34,12 +34,15 @@ It is designed for Taobao, Tmall, JD, Amazon, Xiaohongshu, and Douyin-style prod
 ```text
 .
 ├── .codex-plugin/plugin.json
+├── bin/ec-image
+├── ec_image_cli.py
 ├── skills/ecommerce-detail-pages/SKILL.md
 ├── skills/ecommerce-main-images/SKILL.md
 ├── assets/style-presets.json
 ├── assets/main-image-presets.json
 ├── scripts/detail_page_brief_template.json
-└── scripts/main_image_brief_template.json
+├── scripts/main_image_brief_template.json
+└── tests/
 ```
 
 ## Example Prompt
@@ -106,6 +109,34 @@ If a demo input reference is also prepared, it should be saved under:
 ```text
 public/demo-inputs/
 ```
+
+## Using the Local CLI
+
+The repository also includes a small local CLI for generating structured planning files without calling any image API:
+
+```bash
+bin/ec-image main \
+  --input public/demo-results/main/watch-main-1.png \
+  --product-name "男士机械腕表" \
+  --category watch \
+  --platform taobao \
+  --count 5 \
+  --mode strict \
+  --out output/watch-main-plan
+```
+
+The CLI writes:
+
+```text
+output/watch-main-plan/
+├── brief.json
+├── main-image-plan.json
+├── prompts.json
+├── qa-checklist.json
+└── summary.md
+```
+
+This is intentionally provider-neutral. It creates product briefs, main-image plans, prompt packs, and QA checklists; it does not generate final images or require an API key.
 
 ## How It Works
 
