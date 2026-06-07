@@ -1,10 +1,10 @@
-# Ecommerce Detail Page Generator
+# Ecommerce Image Generator
 
-Codex plugin for turning one product reference image into multiple ecommerce detail-page long images.
+Codex plugin for turning one product reference image into ecommerce product main images and detail-page long images.
 
 ## Open Source Overview
 
-Ecommerce Detail Page Generator is an open-source Codex plugin template for building repeatable ecommerce image-generation workflows. It packages prompt strategy, product-brief extraction, visual planning, and QA guidance into a reusable skill that can be adapted for different storefronts, product categories, and image providers.
+Ecommerce Image Generator is an open-source Codex plugin template for building repeatable ecommerce image-generation workflows. It packages prompt strategy, product-brief extraction, visual planning, and QA guidance into reusable skills that can be adapted for different storefronts, product categories, and image providers.
 
 The project is useful for:
 
@@ -21,12 +21,13 @@ This plugin provides a reusable Codex skill for ecommerce image generation workf
 
 - inspect a product reference image
 - infer product category, selling points, and visual constraints
+- generate product main images for marketplace listings and social covers
 - plan 3-5 differentiated ecommerce detail-page long images
 - generate prompt packs for each visual direction
 - run visual QA for product fidelity, composition, and demo readiness
 - package output paths and copywriting for recording or production review
 
-It is designed for Taobao, Tmall, JD, Amazon-style product listing work, especially when a user wants to provide one product image and quickly generate several polished detail-page concepts.
+It is designed for Taobao, Tmall, JD, Amazon, Xiaohongshu, and Douyin-style product listing work, especially when a user wants to provide one product image and quickly generate several polished main-image or detail-page concepts.
 
 ## Plugin Structure
 
@@ -34,8 +35,11 @@ It is designed for Taobao, Tmall, JD, Amazon-style product listing work, especia
 .
 ├── .codex-plugin/plugin.json
 ├── skills/ecommerce-detail-pages/SKILL.md
+├── skills/ecommerce-main-images/SKILL.md
 ├── assets/style-presets.json
-└── scripts/detail_page_brief_template.json
+├── assets/main-image-presets.json
+├── scripts/detail_page_brief_template.json
+└── scripts/main_image_brief_template.json
 ```
 
 ## Example Prompt
@@ -44,11 +48,15 @@ It is designed for Taobao, Tmall, JD, Amazon-style product listing work, especia
 根据这张产品图，生成 5 套电商详情页长图
 ```
 
+```text
+根据这张产品图，生成 5 张淘宝商品主图
+```
+
 ## Using in Codex
 
 1. Install or enable this plugin in Codex.
 2. Start a Codex thread and attach or reference a product image.
-3. Ask Codex to generate ecommerce detail-page images. The skill is triggered by prompts such as:
+3. Ask Codex to generate ecommerce product images. The skills are triggered by prompts such as:
 
 ```text
 根据这张产品图，生成 5 套电商详情页长图
@@ -62,7 +70,15 @@ It is designed for Taobao, Tmall, JD, Amazon-style product listing work, especia
 保持产品外观严格一致，生成天猫风格详情页，并给出每张图的文案和 storyboard
 ```
 
-Codex will inspect the product image, infer a product brief when details are missing, plan differentiated long-page concepts, generate prompt packs, run visual QA, and return image paths plus copywriting notes.
+```text
+保持产品外观一致，生成 Amazon white-background 主图，1000x1000，不要文字
+```
+
+```text
+用 demo 模式生成 3 张小红书风格产品封面主图
+```
+
+Codex will inspect the product image, infer a product brief when details are missing, plan differentiated main-image or long-page concepts, generate prompt packs, run visual QA, and return image paths plus copywriting notes.
 
 For best results, provide:
 
@@ -72,6 +88,12 @@ For best results, provide:
 - desired output count, usually 3-5
 - mode: `strict` for product fidelity, or `demo` for polished demo material
 - any claims, specs, or forbidden wording that should be included or avoided
+
+Main images should be saved under:
+
+```text
+public/demo-results/main/
+```
 
 By convention, generated images should be saved under:
 
@@ -87,10 +109,11 @@ public/demo-inputs/
 
 ## How It Works
 
-The plugin contributes one Codex skill:
+The plugin contributes two Codex skills:
 
 ```text
 skills/ecommerce-detail-pages/SKILL.md
+skills/ecommerce-main-images/SKILL.md
 ```
 
 When the skill is triggered, Codex follows a structured workflow:
@@ -103,7 +126,43 @@ When the skill is triggered, Codex follows a structured workflow:
 - review outputs for product fidelity and ecommerce usability
 - package the final image paths, copy, storyboard notes, and caveats
 
-The JSON files under `assets/` and `scripts/` provide reusable defaults for style directions and product-brief structure. They are intended to be extended rather than treated as fixed runtime dependencies.
+The JSON files under `assets/` and `scripts/` provide reusable defaults for style directions, main-image types, and product-brief structure. They are intended to be extended rather than treated as fixed runtime dependencies.
+
+## Product Main Image Generation
+
+Use the `ecommerce-main-images` skill when the user wants product main images, listing hero images, white-background product images, marketplace covers, SKU showcases, or social commerce product covers.
+
+Common prompts:
+
+```text
+根据这张产品图，生成 5 张淘宝商品主图，包含白底图、场景图和高级棚拍图
+```
+
+```text
+保持产品外观一致，生成 Amazon white-background 主图，1000x1000，不要文字
+```
+
+```text
+用 demo 模式生成 3 张小红书风格产品封面主图
+```
+
+Supported main-image types:
+
+- `white-background`: clean white or near-white listing image with no text
+- `lifestyle`: product-led usage scene
+- `premium-studio`: high-end studio product beauty shot
+- `comparison`: multi-angle, SKU, size, or feature comparison image
+- `social-cover`: Xiaohongshu/Douyin-style mobile cover
+
+Main image outputs should use:
+
+```text
+public/demo-results/main/<product-slug>-main-1.png
+```
+
+## Detail Page Generation
+
+Use the `ecommerce-detail-pages` skill when the user wants ecommerce detail-page long images, product detail posters, Taobao/Tmall/JD detail images, or demo-ready long-form image sets.
 
 ## Modes
 
@@ -115,7 +174,8 @@ The JSON files under `assets/` and `scripts/` provide reusable defaults for styl
 Generated detail pages should:
 
 - preserve the product shape, color, and key visible details
-- include five clear content zones per long image
+- keep product main images focused, clean, and recognizable at thumbnail size
+- include five clear content zones per detail-page long image
 - produce differentiated layouts rather than repeated variants
 - avoid unrelated products, distorted people, broken Chinese text, and SVG placeholders
 - return usable image paths plus product copy and storyboard notes

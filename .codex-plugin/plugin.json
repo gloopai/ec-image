@@ -1,22 +1,24 @@
 {
-  "name": "ecommerce-detail-page-generator",
+  "name": "ecommerce-image-generator",
   "version": "0.1.0",
-  "description": "Generate ecommerce product detail-page long images from a product reference image.",
+  "description": "Generate ecommerce product main images and detail-page long images from a product reference image.",
   "author": {
     "name": "Local developer"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "Ecommerce Detail Page Generator",
-    "shortDescription": "Turn a product image into polished ecommerce detail-page image sets.",
-    "longDescription": "A reusable Codex workflow for generating 3-5 professional ecommerce detail-page long images from an uploaded product reference image, including product analysis, selling-point copy, prompt planning, visual QA, and demo-ready output packaging.",
+    "displayName": "Ecommerce Image Generator",
+    "shortDescription": "Turn a product image into polished ecommerce main image and detail-page sets.",
+    "longDescription": "A reusable Codex workflow for generating professional ecommerce main image sets and 3-5 detail-page long images from an uploaded product reference image, including product analysis, selling-point copy, prompt planning, visual QA, and demo-ready output packaging.",
     "developerName": "Local developer",
     "category": "Productivity",
     "capabilities": [
       "image-generation",
+      "main-image-generation",
+      "detail-page-generation",
       "ecommerce-copy",
       "visual-qa"
     ],
-    "defaultPrompt": "根据这张产品图，生成 5 套电商详情页长图。"
+    "defaultPrompt": "根据这张产品图，生成 5 张商品主图和 5 套电商详情页长图。"
   }
 }

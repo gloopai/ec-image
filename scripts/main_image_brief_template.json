@@ -1,0 +1,38 @@
+{
+  "product_name": "",
+  "category": "",
+  "platform": "天猫/淘宝",
+  "mode": "strict",
+  "output_count": 5,
+  "target_dimensions": {
+    "square": {
+      "width": 1000,
+      "height": 1000
+    },
+    "vertical": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "main_image_types": [
+    "white-background",
+    "premium-studio",
+    "lifestyle",
+    "comparison",
+    "social-cover"
+  ],
+  "visual_constraints": [
+    "保持产品外形、颜色、材质和关键结构",
+    "产品必须是画面主体",
+    "白底主图避免文字、道具、边框和装饰元素",
+    "多张主图必须用途不同，而不是轻微换色",
+    "避免无关产品、虚假 logo、水印、乱码中文和畸形手部"
+  ],
+  "deliverables": [
+    "1-6 张商品主图",
+    "每张主图的类型和用途说明",
+    "产品名称和平台商品资料填写文案",
+    "主图 prompt pack",
+    "视觉质检说明"
+  ]
+}

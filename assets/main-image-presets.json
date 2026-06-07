@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "presets": [
+    {
+      "id": "white-background",
+      "name": "White Background",
+      "palette": ["white", "soft gray", "natural shadow"],
+      "best_for": ["Amazon", "Taobao primary image", "Tmall product listing"],
+      "ratio": "1:1",
+      "layout": "single product centered on clean white or near-white background, no text, no props, realistic shadow"
+    },
+    {
+      "id": "lifestyle",
+      "name": "Lifestyle Scene",
+      "palette": ["neutral home", "warm daylight", "brand accent"],
+      "best_for": ["home goods", "beauty", "small appliances", "social commerce"],
+      "ratio": "4:5",
+      "layout": "product dominant in a believable use scene with restrained props and clear foreground focus"
+    },
+    {
+      "id": "premium-studio",
+      "name": "Premium Studio",
+      "palette": ["deep neutral", "soft highlight", "cool gray"],
+      "best_for": ["electronics", "premium devices", "beauty packaging"],
+      "ratio": "1:1",
+      "layout": "studio-lit product beauty shot with controlled shadow, macro detail, and premium material emphasis"
+    },
+    {
+      "id": "comparison",
+      "name": "Comparison Layout",
+      "palette": ["white", "light gray", "accent label"],
+      "best_for": ["SKU sets", "multi-angle products", "feature comparison"],
+      "ratio": "1:1",
+      "layout": "organized multi-angle or SKU comparison with concise labels and clear product hierarchy"
+    },
+    {
+      "id": "social-cover",
+      "name": "Social Cover",
+      "palette": ["bright neutral", "soft accent", "high contrast text"],
+      "best_for": ["Xiaohongshu", "Douyin", "mobile-first marketplace covers"],
+      "ratio": "4:5",
+      "layout": "mobile-first cover image with product dominant, concise headline, lifestyle cue, and clean negative space"
+    }
+  ]
+}
