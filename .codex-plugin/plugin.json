@@ -1,6 +1,6 @@
 {
   "name": "ecommerce-image-generator",
-  "version": "0.3.0",
+  "version": "0.4.2",
   "description": "Generate ecommerce product main images and detail-page long images from a product reference image.",
   "author": {
     "name": "Local developer"

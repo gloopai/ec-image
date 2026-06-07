@@ -1,0 +1,20 @@
+{
+  "name": "ec-image",
+  "version": "0.4.2",
+  "description": "Local CLI and Codex plugin workflow for ecommerce product image planning.",
+  "type": "module",
+  "bin": {
+    "ec-image": "./bin/ec-image.js"
+  },
+  "scripts": {
+    "test": "node tests/validate_cli.js && node tests/validate_plugin.js"
+  },
+  "keywords": [
+    "codex",
+    "ecommerce",
+    "image-generation",
+    "taobao",
+    "product-images"
+  ],
+  "license": "UNLICENSED"
+}

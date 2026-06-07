@@ -34,8 +34,9 @@ It is designed for Taobao, Tmall, JD, Amazon, Xiaohongshu, and Douyin-style prod
 ```text
 .
 ├── .codex-plugin/plugin.json
+├── package.json
 ├── bin/ec-image
-├── ec_image_cli.py
+├── bin/ec-image.js
 ├── skills/ecommerce-detail-pages/SKILL.md
 ├── skills/ecommerce-main-images/SKILL.md
 ├── assets/style-presets.json
@@ -110,12 +111,12 @@ If a demo input reference is also prepared, it should be saved under:
 public/demo-inputs/
 ```
 
-## Using the Local CLI
+## Using the npm CLI
 
-The repository also includes a small local CLI for generating structured planning files without calling any image API:
+The repository also includes a zero-dependency Node.js CLI for generating structured planning files without calling any image API. From a cloned checkout, run:
 
 ```bash
-bin/ec-image main \
+node bin/ec-image.js main \
   --input public/demo-results/main/watch-main-1.png \
   --product-name "男士机械腕表" \
   --category watch \
@@ -123,6 +124,22 @@ bin/ec-image main \
   --count 5 \
   --mode strict \
   --out output/watch-main-plan
+```
+
+For local development, you can also run the compatibility wrapper:
+
+```bash
+bin/ec-image main --input public/demo-results/main/watch-main-1.png
+```
+
+After publishing or linking the package, use the npm-style command:
+
+```bash
+npx ec-image main \
+  --input ./product.jpg \
+  --product-name "男士机械腕表" \
+  --platform taobao \
+  --count 5
 ```
 
 The CLI writes:
@@ -136,7 +153,32 @@ output/watch-main-plan/
 └── summary.md
 ```
 
-This is intentionally provider-neutral. It creates product briefs, main-image plans, prompt packs, and QA checklists; it does not generate final images or require an API key.
+This is intentionally provider-neutral. It creates product briefs, main-image plans, prompt packs, and QA checklists; it does not generate final images or require an API key. The CLI uses only Node.js standard library modules and has no npm runtime dependencies.
+
+The command prints step-by-step progress so long-running Codex or terminal sessions do not look stalled:
+
+```text
+[1/6] Parsed request
+[2/6] Checked reference image
+      status: found
+[3/6] Planned image types
+[4/6] Built planning package
+[5/6] Wrote files
+      ok brief.json
+      ok main-image-plan.json
+      ok prompts.json
+      ok qa-checklist.json
+      ok summary.md
+[6/6] Ready for Codex or image generation
+      output: output/main-image-plan
+      next: review summary.md, then use prompts.json with your image generation workflow
+```
+
+Run validation with:
+
+```bash
+npm test
+```
 
 ## How It Works
 
