@@ -1,0 +1,43 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Hook,Arial Unicode MS,82,&H00FFFAF6,&H000000FF,&H00000000,&HAA000000,-1,0,0,0,100,100,0,0,1,2,0,8,64,64,92,1
+Style: HookAccent,Arial Unicode MS,82,&H001C9FFF,&H000000FF,&H00000000,&HAA000000,-1,0,0,0,100,100,0,0,1,2,0,8,64,64,92,1
+Style: Caption,Arial Unicode MS,42,&H00FFFAF6,&H000000FF,&H00000000,&HAA000000,-1,0,0,0,100,100,0,0,1,1,0,2,70,70,190,1
+Style: CaptionCyan,Arial Unicode MS,42,&H00D6E720,&H000000FF,&H00000000,&HAA000000,-1,0,0,0,100,100,0,0,1,1,0,2,70,70,190,1
+Style: Label,Arial Unicode MS,31,&H00FFFAF6,&H000000FF,&H00000000,&HAA000000,-1,0,0,0,100,100,0,0,1,1,0,7,92,60,0,1
+Style: Small,Arial Unicode MS,28,&H00C2B2A7,&H000000FF,&H00000000,&HAA000000,0,0,0,0,100,100,0,0,1,1,0,2,70,70,118,1
+Style: CTA,Arial Unicode MS,54,&H00FFFAF6,&H000000FF,&H00000000,&HAA000000,-1,0,0,0,100,100,0,0,1,2,0,2,70,70,118,1
+Style: CTAAccent,Arial Unicode MS,54,&H001C9FFF,&H000000FF,&H00000000,&HAA000000,-1,0,0,0,100,100,0,0,1,2,0,2,70,70,118,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.00,0:00:03.20,Hook,,0,0,0,,{\pos(540,118)}一张产品图
+Dialogue: 11,0:00:00.25,0:00:03.20,HookAccent,,0,0,0,,{\pos(540,218)}Codex 自动做淘宝主图？
+Dialogue: 10,0:00:03.20,0:00:08.40,Hook,,0,0,0,,{\pos(540,118)}不会设计主图？
+Dialogue: 11,0:00:03.45,0:00:08.40,HookAccent,,0,0,0,,{\pos(540,218)}把产品图丢给 Codex
+Dialogue: 10,0:00:08.40,0:00:15.50,Hook,,0,0,0,,{\pos(540,118)}一句话触发插件
+Dialogue: 11,0:00:08.65,0:00:15.50,HookAccent,,0,0,0,,{\pos(540,218)}ecommerce-main-images
+Dialogue: 10,0:00:15.50,0:00:27.50,Hook,,0,0,0,,{\pos(540,118)}AI 开始出图
+Dialogue: 11,0:00:15.75,0:00:27.50,HookAccent,,0,0,0,,{\pos(540,218)}白底 · 棚拍 · 场景 · 细节
+Dialogue: 10,0:00:27.50,0:00:37.80,Hook,,0,0,0,,{\pos(540,118)}不只是生成图
+Dialogue: 11,0:00:27.75,0:00:37.80,HookAccent,,0,0,0,,{\pos(540,218)}Prompt + 反向词 + QA
+Dialogue: 10,0:00:37.80,0:00:45.00,Hook,,0,0,0,,{\pos(540,118)}想要这个插件？
+Dialogue: 11,0:00:38.05,0:00:45.00,HookAccent,,0,0,0,,{\pos(540,218)}评论「主图」进群
+
+Dialogue: 9,0:00:03.20,0:00:08.40,Caption,,0,0,0,,{\pos(540,1710)}白底图、场景图、高级棚拍图，全都要自己想？
+Dialogue: 9,0:00:08.40,0:00:15.50,CaptionCyan,,0,0,0,,{\pos(540,1710)}输入：生成 5 张淘宝商品主图
+Dialogue: 9,0:00:15.50,0:00:21.50,Caption,,0,0,0,,{\pos(540,1710)}等待过程压缩，看结果逐张出现
+Dialogue: 9,0:00:21.50,0:00:27.50,CaptionCyan,,0,0,0,,{\pos(540,1710)}真实 Codex 流程，不是 PPT
+Dialogue: 9,0:00:27.50,0:00:37.80,Caption,,0,0,0,,{\pos(540,1710)}每张图都有用途、提示词和质检标准
+Dialogue: 9,0:00:37.80,0:00:45.00,CTA,,0,0,0,,{\pos(540,1710)}插件 + 模板，评论区拿
+
+Dialogue: 8,0:00:08.40,0:00:15.50,Label,,0,0,0,,{\pos(96,366)}PROMPT
+Dialogue: 8,0:00:15.50,0:00:27.50,Label,,0,0,0,,{\pos(96,366)}GENERATING
+Dialogue: 8,0:00:27.50,0:00:37.80,Label,,0,0,0,,{\pos(96,366)}RESULTS
+Dialogue: 8,0:00:37.80,0:00:45.00,Label,,0,0,0,,{\pos(96,366)}JOIN
